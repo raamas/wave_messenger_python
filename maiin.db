@@ -1,0 +1,37 @@
+# USERS TABLE
+    ID
+    FULLNAME
+    USERNAME
+    PHONENUMBER
+# MESSAGES TABLE
+    ID
+    TIMESTAMP
+    SENDER_ID
+    CONTENT
+    RECIEVER_ID
+# CHATS TABLE
+    ID 
+    MEMBERS_ID
+    MESSAGES_ID
+# GROUPS TABLE
+    ID
+    ADMINS_ID
+    MEMBERS_ID
+    MESSAGES_ID
+# USERS-MESSAGES TABLE (OTM)
+    USER_ID
+    MESSAGE_ID
+# USERS-GROUPS TABLE (MTM)
+    USER_ID
+    GROUP_ID
+# MESSAGES-GROUPS TABLE (MTO)
+    MESSAGE_ID
+    GROUP_ID
+
+#API STRUCTURE
+    /CHAT/:chat_id
+        #shows a timeflow based on messages sended between both users
+    /USER/:user_id
+        #shows a user's stats
+    /CHAT/GROUP/:group_id
+        #shows a group timeline
