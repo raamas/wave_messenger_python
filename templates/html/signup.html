@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waves</title>
+</head>
+<body>
+    <form id="signup-form" action="">
+        <input id="pn" type="text" placeholder="Enter Phone Number">
+        <input id="fn" type="text" placeholder="Enter Full Name">
+        <input id="un" type="text" placeholder="Enter User Name">
+        <input id="submit" type="submit" value="Done">
+    </form>
+    
+    <script>
+        let pn = document.getElementById("pn")
+        let fn = document.getElementById("fn")
+        let un = document.getElementById("un")
+        let btn = document.getElementById("submit")
+        btn.addEventListener("click", async (e)=>{
+            e.preventDefault();
+            res = await fetch("http://localhost:5000/signup",{method:'POST',headers: {'Content-Type': 'application/json'}, body: { data : { "username":un.innerText, "phonenumber":pn.innerText, "fullname": fn.innerText } }})
+            console.log(res)
+        })
+    </script>
+</body>
+</html>
